@@ -28,4 +28,9 @@ body {
     padding: 5px 10px;
     cursor: pointer;
 }
+/* Dark mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
 
