@@ -20,3 +20,7 @@ body {
     display: flex;
     gap: 10px;
 }
+#message-input {
+    flex-grow: 1;
+    padding: 5px;
+}
