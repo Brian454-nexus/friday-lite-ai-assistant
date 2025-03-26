@@ -24,3 +24,5 @@ function renderChat() {
     chatDisplay.scrollTop = chatDisplay.scrollHeight;
 }
 
+const sendBtn = document.getElementById('send-btn');
+
