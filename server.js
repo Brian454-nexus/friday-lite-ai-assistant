@@ -1,21 +1,19 @@
 const express = require('express');
 const { GoogleAuth } = require('google-auth-library');
-const fetch = require('node-fetch'); // Install with `npm install node-fetch@2` for Node < 18
+const fetch = require('node-fetch');
 const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors()); // Allow frontend requests
-app.use(express.json()); // Parse JSON bodies
+app.use(cors());
+app.use(express.json());
 
-// Path to your downloaded service account key
 const auth = new GoogleAuth({
-    keyFile: 'friday-lite-6205c6e4ca4a.json', // Replace with your JSON file path
+    keyFile: './friday-lite-6205c6e4ca4a.json',
     scopes: ['https://www.googleapis.com/auth/dialogflow']
 });
 
-// Endpoint to handle messages
 app.post('/send-message', async (req, res) => {
     try {
         const message = req.body.message;
@@ -23,7 +21,7 @@ app.post('/send-message', async (req, res) => {
         const token = await client.getAccessToken();
 
         const response = await fetch(
-            `https://dialogflow.googleapis.com/v2/projects/<project-id>/agent/sessions/12345:detectIntent`,
+            `https://dialogflow.googleapis.com/v2/projects/friday-lite/agent/sessions/12345:detectIntent`,
             {
                 method: 'POST',
                 headers: {
@@ -42,7 +40,7 @@ app.post('/send-message', async (req, res) => {
         );
 
         const data = await response.json();
-        const reply = data.queryResult.fulfillmentText;
+        const reply = data.queryResult.fulfillmentText || 'I didn’t understand that.';
         res.json({ reply });
     } catch (error) {
         console.error('Error:', error);
