@@ -1,2 +1,2 @@
-let chatHistory = [];
+let chatHistory = []
 
