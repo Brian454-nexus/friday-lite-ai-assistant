@@ -26,4 +26,5 @@ function renderChat() {
 
 const sendBtn = document.getElementById('send-btn');
 const messageInput = document.getElementById('message-input');
+sendBtn.addEventListener('click', () => sendMessage(messageInput.value.trim()));
 
