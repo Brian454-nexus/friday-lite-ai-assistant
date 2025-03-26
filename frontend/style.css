@@ -4,36 +4,3 @@ body {
     padding: 20px;
     background-color: #f0f0f0;
 }
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-.chat-display {
-    height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #fff;
-    margin-bottom: 10px;
-}
-.input-area {
-    display: flex;
-    gap: 10px;
-}
-#message-input {
-    flex-grow: 1;
-    padding: 5px;
-}
-#send-btn, #theme-toggle {
-    padding: 5px 10px;
-    cursor: pointer;
-}
-/* Dark mode */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-.dark-mode .chat-display {
-    background-color: #444;
-    border-color: #666;
-}
