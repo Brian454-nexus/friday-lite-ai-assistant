@@ -31,3 +31,11 @@ messageInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage(messageInput.value.trim());
 });
 
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeToggle.textContent = document.body.classList.contains('dark-mode')
+        ? 'Toggle Light Mode'
+        : 'Toggle Dark Mode';
+});
+
