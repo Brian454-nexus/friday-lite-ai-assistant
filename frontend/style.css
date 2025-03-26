@@ -16,3 +16,7 @@ body {
     background-color: #fff;
     margin-bottom: 10px;
 }
+.input-area {
+    display: flex;
+    gap: 10px;
+}
