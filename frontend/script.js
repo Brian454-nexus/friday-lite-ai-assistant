@@ -15,3 +15,12 @@ async function sendMessage(message) {
     messageInput.value = '';
 }
 
+function renderChat() {
+    const chatDisplay = document.getElementById('chat-display');
+    chatDisplay.innerHTML = '';
+    chatHistory.forEach(msg => {
+        chatDisplay.innerHTML += `<p><strong>${msg.sender}:</strong> ${msg.text}</p>`;
+    });
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
+}
+
