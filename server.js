@@ -19,6 +19,7 @@ app.post('/send-message', async (req, res) => {
         const message = req.body.message;
         const client = await auth.getClient();
         const token = await client.getAccessToken();
+        console.log('Token:', token.token); // Debug token
 
         const response = await fetch(
             `https://dialogflow.googleapis.com/v2/projects/friday-lite/agent/sessions/12345:detectIntent`,
@@ -40,11 +41,12 @@ app.post('/send-message', async (req, res) => {
         );
 
         const data = await response.json();
-        const reply = data.queryResult.fulfillmentText || 'I didn’t understand that.';
+        console.log('Dialogflow Response:', JSON.stringify(data, null, 2)); // Debug full response
+        const reply = data.queryResult.fulfillmentText || 'Sorry, I didn’t get that. Try again!';
         res.json({ reply });
     } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'Something went wrong' });
+        console.error('Error:', error.message);
+        res.status(500).json({ error: 'Oops, something went wrong!' });
     }
 });
 

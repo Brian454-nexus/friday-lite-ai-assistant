@@ -1,42 +1,42 @@
-# 🚀 FRIDAY LITE-AI Personal Assistant
+# 🚀 FRIDAY LITE - AI Personal Assistant
 
 ## 🤖 Introduction
-FRIDAY LITE-AI is a cutting-edge **AI-powered personal assistant** that leverages **Dialogflow API** to provide intelligent responses, streamline tasks, and enhance user interaction. Inspired by the **futuristic AI systems** in sci-fi, FRIDAY LITE-AI is built to be a **smart, responsive, and human-like assistant** that operates seamlessly in a Single Page Application (SPA) format.
+FRIDAY LITE is a sleek, AI-powered personal assistant built with **Dialogflow API**. Designed as a **Single Page Application (SPA)**, it offers a modern, responsive chat interface inspired by Grok and ChatGPT.
 
 ## 🎯 Features
-✔ **Natural Language Processing (NLP)** – Powered by **Dialogflow API** for smart conversations.  
-✔ **Single Page Application (SPA)** – Smooth, seamless experience with no page reloads.  
-✔ **Real-time Chat Interface** – Engaging and interactive chat UI.  
-✔ **Dark/Light Mode Toggle** – Personalized themes for better user experience.  
-✔ **Keyboard Shortcut Support** – Press `Enter` to send messages quickly.  
-✔ **Asynchronous API Calls** – Fast and efficient data fetching with `fetch()` and `async/await`.  
-✔ **Interactive Event Listeners** – Click, keypress, and mode switch events for smooth interaction.  
-✔ **Dynamic Chat History** – Messages are rendered using `map()` for better UI updates.  
-✔ **JSON Integration (Stretch Goal)** – Option to save and retrieve chat history using `db.json`.  
+✔ **NLP via Dialogflow** - Smart, human-like responses.  
+✔ **SPA Design** - No page reloads, smooth UX.  
+✔ **Aesthetic UI** - Chat bubbles, gradients, animations.  
+✔ **Dark/Light Mode** - Toggle with a stylish emoji button.  
+✔ **Event Listeners** - Send via click, Enter key, theme toggle.  
+✔ **Chat History** - Dynamic rendering with array iteration.  
+✔ **Async API Calls** - Fast, reliable communication with the backend.  
+✔ **Stretch Goal** - Persistent chat history with JSON-Server.
 
 ## 🏗️ Tech Stack
-- **Frontend:** HTML, CSS, JavaScript (Vanilla JS)  
-- **AI API:** Dialogflow API  
-- **Data Handling:** Fetch API, JSON  
-- **Styling:** Responsive CSS, Theme Switching  
+- **Frontend**: HTML, CSS, Vanilla JS  
+- **Backend**: Node.js, Express  
+- **AI**: Dialogflow API  
+- **Data**: JSON, Fetch API  
 
 ## 📂 Project Structure
-```
 FRIDAY-LITE-AI/
 ├── frontend/
-│   ├── index.html   # Chat Interface
+│   ├── index.html   # Chat UI
 │   ├── style.css    # Styling
-│   ├── script.js    # API Calls & Logic
-├── assets/
-│   ├── images/
-├── db.json          # (Stretch Goal) Chat History Persistence
-├── README.md        # Documentation
-```
+│   ├── script.js    # Logic & API
+├── db.json          # Chat history (stretch goal)
+├── server.js        # Backend server
+├── package.json     # Dependencies
+├── README.md        # Docs
 
-## 🚀 Getting Started
+text
 
-### 1️⃣ Clone the Repository
-```sh
+
+## 🚀 Setup Instructions
+
+### 1. Clone the Repo
+```bash
 git clone https://github.com/yourusername/friday-lite-ai.git
 cd friday-lite-ai
 ```
@@ -75,9 +75,6 @@ Want to enhance FRIDAY LITE-AI? Follow these steps:
 
 ## ⚖️ License
 This project is licensed under the **MIT License**.
-
-## 👥 Contributors
-- Brian Terer - Lead Developer
 
 ## 🌟 Acknowledgments
 Special thanks to:
