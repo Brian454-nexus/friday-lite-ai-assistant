@@ -9,4 +9,9 @@ async function sendMessage(message) {
         },
         body: JSON.stringify({ message })
     });
+    const data = await response.json();
+    chatHistory.push({ sender: 'Friday', text: data.reply });
+    renderChat();
+    messageInput.value = '';
+}
 
