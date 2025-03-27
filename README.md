@@ -76,6 +76,9 @@ Want to enhance FRIDAY LITE-AI? Follow these steps:
 ## ⚖️ License
 This project is licensed under the **MIT License**.
 
+## 👥 Contributors
+- Brian Terer - Lead Developer
+
 ## 🌟 Acknowledgments
 Special thanks to:
 - **Dialogflow** for its NLP capabilities.
