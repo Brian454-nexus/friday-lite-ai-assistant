@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRIDAY LITE - AI Personal Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <i class="fas fa-robot"></i>
+        <h1>F.R.I.D.A.Y - Futuristic Robot Intelligent Digital Assistant for You </h1>
+      </div>
+      <div class="header-actions">
+        <button id="clear-chat-button" class="clear-chat-button" title="Clear Chat">
+          <i class="fas fa-trash-alt"></i>
+          <span class="tooltip">Clear Chat</span>
+        </button>
+        <button id="help-button" class="help-button" title="Help">
+          <i class="fas fa-question-circle"></i>
+          <span class="tooltip">Help</span>
+        </button>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+          <span class="tooltip">Toggle Theme</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="chat-container">
+      <div class="chat-header">
+        <h2><i class="fas fa-comment-dots"></i> Chat with F.R.I.D.A.Y</h2>
+      </div>
+      
+      <div id="chat-messages" class="chat-messages">
+        <!-- Messages will be dynamically added here -->
+      </div>
+      
+      <div class="chat-input-container">
+        <input 
+          type="text" 
+          id="user-input" 
+          class="chat-input" 
+          placeholder="Type your message..." 
+          autocomplete="off"
+        >
+        <button id="send-button" class="send-button" disabled>
+          <i class="fas fa-paper-plane"></i>
+          <span>Send</span>
+        </button>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      FRIDAY LITE - AI Personal Assistant &copy; <span id="current-year"></span>
+    </footer>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>FRIDAY LITE Help</h3>
+        <button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4>What can FRIDAY LITE do?</h4>
+        <div class="help-section">
+          <h5>📋 Task Management</h5>
+          <ul>
+            <li>"Remind me to call mom tomorrow at 5pm"</li>
+            <li>"Show my tasks"</li>
+            <li>"Mark task 2 as complete"</li>
+          </ul>
+        </div>
+        <div class="help-section">
+          <h5>📝 Notes</h5>
+          <ul>
+            <li>"Take a note titled 'Meeting Notes' with the following content..."</li>
+            <li>"Show me my notes"</li>
+            <li>"Show me my note about meeting"</li>
+          </ul>
+        </div>
+        <div class="help-section">
+          <h5>📚 Study Assistance</h5>
+          <ul>
+            <li>"Summarize this: [paste text]"</li>
+            <li>"Generate a quiz on history"</li>
+            <li>"Create a quiz from my latest note"</li>
+          </ul>
+        </div>
+        <div class="help-section">
+          <h5>⚡ Productivity</h5>
+          <ul>
+            <li>"Give me a productivity tip"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-button close-button">Got it!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+  // Update the welcome message format
+  document.addEventListener('DOMContentLoaded', function() {
+    // This will run after the app.js init() function
+    setTimeout(() => {
+      // If there's an issue with the welcome message, we'll fix it
+      const welcomeMessages = document.querySelectorAll('.message.assistant');
+      if (welcomeMessages.length > 0) {
+        const firstMessage = welcomeMessages[0];
+        const messageText = firstMessage.querySelector('.message-text');
+        
+        // Check if the message has HTML tags showing
+        if (messageText && messageText.textContent.includes('<strong>') || messageText.textContent.includes('<br>')) {
+          // Clear the chat and add a properly formatted welcome message
+          chatMessages.innerHTML = '';
+          
+          addMessage({
+            id: 'welcome',
+            text: "# 👋 Hello!\n\nI'm FRIDAY LITE, your personal assistant. I can help with:\n\n- **Task management** (reminders, to-dos)\n- **Note taking** and summarization\n- **Study assistance** (generate quizzes, summarize content)\n- **Productivity tips**\n\nHow can I assist you today?",
+            sender: 'assistant',
+            timestamp: new Date()
+          });
+        }
+      }
+    }, 500);
+  });
+</script>
+<!-- Add this script at the end of the body to ensure proper rendering -->
+<script>
+  // Force a refresh of the welcome message to ensure proper rendering
+  document.addEventListener('DOMContentLoaded', function() {
+    // This will run after the app.js init() function
+    setTimeout(() => {
+      // Clear the chat and add a properly formatted welcome message
+      clearChat();
+    }, 500);
+  });
+</script>
+</body>
+</html>
+

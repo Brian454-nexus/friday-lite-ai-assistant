@@ -1,3 +1,17 @@
 {
-    "messages": []
-}
+    "chat-history": [
+      {
+        "id": "default",
+        "messages": [
+          {
+            "id": "welcome",
+            "text": "Hello! I'm FRIDAY LITE, your personal assistant. How can I help you today?",
+            "sender": "assistant",
+            "timestamp": "2023-07-01T12:00:00.000Z"
+          }
+        ]
+      }
+    ]
+  }
+  
+  

@@ -1,21 +1,25 @@
 {
-  "name": "friday-lite-ai",
-  "version": "1.0.0",
-  "description": "AI-powered personal assistant",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "google-auth-library": "^9.15.1",
-    "node-fetch": "^2.7.0"
-  }
+    "name": "friday-lite",
+    "version": "1.0.0",
+    "description": "AI Personal Assistant built with Dialogflow API",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "json-server": "json-server --watch db.json --port 3001"
+    },
+    "dependencies": {
+        "@google-cloud/dialogflow": "^7.0.1",
+        "cors": "^2.8.5",
+        "dialogflow": "^1.2.0",
+        "express": "^4.21.2",
+        "next": "^15.2.4",
+        "typescript": "^5.8.2",
+        "uuid": "^11.1.0"
+    },
+    "devDependencies": {
+        "@types/next": "^8.0.7",
+        "json-server": "^0.17.3",
+        "nodemon": "^2.0.22"
+    }
 }
