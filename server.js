@@ -19,10 +19,9 @@ app.post('/send-message', async (req, res) => {
         const message = req.body.message;
         const client = await auth.getClient();
         const token = await client.getAccessToken();
-        console.log('Token:', token.token); // Debug token
 
         const response = await fetch(
-            `https://dialogflow.googleapis.com/v2/projects/friday-lite/agent/sessions/12345:detectIntent`,
+            `https://dialogflow.googleapis.com/v2/projects/friday-lite-hajp/agent/sessions/12345:detectIntent`,
             {
                 method: 'POST',
                 headers: {
@@ -41,12 +40,16 @@ app.post('/send-message', async (req, res) => {
         );
 
         const data = await response.json();
-        console.log('Dialogflow Response:', JSON.stringify(data, null, 2)); // Debug full response
-        const reply = data.queryResult.fulfillmentText || 'Sorry, I didn’t get that. Try again!';
+        if (!response.ok) {
+            console.error('Dialogflow Error:', JSON.stringify(data, null, 2));
+            throw new Error(data.error?.message || 'Unknown Dialogflow error');
+        }
+
+        const reply = data.queryResult?.fulfillmentText || 'Sorry, I didn’t understand that.';
         res.json({ reply });
     } catch (error) {
         console.error('Error:', error.message);
-        res.status(500).json({ error: 'Oops, something went wrong!' });
+        res.status(500).json({ error: `Oops, I hit a snag: ${error.message}` });
     }
 });
 
